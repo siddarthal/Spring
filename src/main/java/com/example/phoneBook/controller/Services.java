@@ -21,6 +21,10 @@ import com.example.phoneBook.components.Contacts;
 public class Services {
 	@Autowired
 	private Contacts contact_;
+	@GetMapping("/**")
+	public String mainMethod() {
+		return "try path {/fetchContact}";
+	}
 	@GetMapping("/fetchContact")
 	public HashMap<String,String> fetchMethod(){
 		return contact_.getList();
